@@ -18,7 +18,7 @@ export default function Projects() {
       const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
       const collapsedHeight = (300 + 2 * rem) * 3;
       setHeight(fullHeight);
-      if (fullHeight <= collapsedHeight) {
+      if (fullHeight <= (collapsedHeight + 20)) {
         setShowAll(true);
         setCanToggle(false);
       } else {
