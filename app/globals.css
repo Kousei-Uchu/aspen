@@ -47,12 +47,13 @@ body {
 .home-hero {
   position: relative;
   width: 100%;
-  height: calc(100vh + 80px); /* Full viewport height (desktop normal) */
-  min-height: calc(100svh + 80px); /* mobile stable height */
+  height: calc(100vh + 160px); /* Full viewport height (desktop normal) */
+  min-height: calc(100svh + 160px); /* mobile stable height */
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+  top: -80px; /* Adjust for extra height */
 }
 
 .home-hero::after {
@@ -67,8 +68,8 @@ body {
 
 .home-hero canvas {
   inset: 0;
-  height: calc(100vh + 80px); /* Full viewport height (desktop normal) */
-  min-height: calc(100svh + 80px); /* mobile stable height */
+  height: calc(100vh + 160px); /* Full viewport height (desktop normal) */
+  min-height: calc(100svh + 160px); /* mobile stable height */
   display: block;
   object-fit: cover;
 }

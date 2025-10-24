@@ -79,7 +79,7 @@ export default function Projects() {
           </SpotlightCard>
         </a>
         <a href="https://sequoiasupport.com" className="project-card-link-overlay" aria-label="Calendair">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 255, 150, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 0, 0, 0.2)">
             <div className="project-card-content">
               <h3 className="project-card-title">Sequoia Support</h3>
               <p className="project-card-description">
@@ -89,7 +89,7 @@ export default function Projects() {
           </SpotlightCard>
           </a>
           <a href="https://helpingpaw.sequoiasupport.com" className="project-card-link-overlay" aria-label="Calendair">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 255, 150, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 8, 255, 0.2)">
             <div className="project-card-content">
               <h3 className="project-card-title">Helping Paw</h3>
               <p className="project-card-description">
@@ -99,7 +99,7 @@ export default function Projects() {
           </SpotlightCard>
         </a>
         <a href="https://profiles.sequoiasupport.com" className="project-card-link-overlay" aria-label="Calendair">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 255, 150, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 221, 255, 0.2)">
             <div className="project-card-content">
               <h3 className="project-card-title">Sequoia Profiles</h3>
               <p className="project-card-description">
@@ -109,7 +109,7 @@ export default function Projects() {
           </SpotlightCard>
         </a>
         <a href="#" onClick={handleMaintaining} className="project-card-link-overlay" aria-label="Calendair">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 255, 150, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 221, 0, 0.2)">
             <div className="project-card-content">
               <h3 className="project-card-title">Botkisser</h3>
               <p className="project-card-description">
@@ -119,7 +119,7 @@ export default function Projects() {
           </SpotlightCard>
         </a>
         <a href="#" onClick={handleMaintaining} className="project-card-link-overlay" aria-label="Calendair">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 255, 150, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 0, 153, 0.2)">
             <div className="project-card-content">
               <h3 className="project-card-title">SoberTrack</h3>
               <p className="project-card-description">
@@ -129,7 +129,7 @@ export default function Projects() {
           </SpotlightCard>
         </a>
         <a href="#" onClick={handleMaintaining} className="project-card-link-overlay" aria-label="Calendair">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 255, 150, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(242, 255, 0, 0.2)">
             <div className="project-card-content">
               <h3 className="project-card-title">Sequoia Social</h3>
               <p className="project-card-description">
