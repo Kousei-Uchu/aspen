@@ -18,7 +18,7 @@ export default function Contact() {
     <section className="contact-section">
       <h1 className="contact-title">Contact Me</h1>
       <p className="contact-text">If you'd like to get in touch, feel free to reach out via email or social media!</p>
-      <div style={{ height: '200px', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', overflow: 'hidden' }}>
         <LogoLoop
           logos={logos}
           speed={100}

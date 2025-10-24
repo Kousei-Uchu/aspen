@@ -1,9 +1,26 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client';
 
+import { useEffect, useState, useRef } from 'react';
 import SpotlightCard from './spotlight-card/spotlight-card';
 
 export default function Projects() {
+
+  const [showAll, setShowAll] = useState(false);
+  const [height, setHeight] = useState<number | null>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  // Measure full height of grid for smooth transition
+  useEffect(() => {
+    if (gridRef.current) {
+      const fullHeight = gridRef.current.scrollHeight;
+      setHeight(fullHeight);
+    }
+  }, [showAll]);
+
+  const toggleShowAll = () => setShowAll(prev => !prev);
+
+  
   const handleAlreadyHere = (e: React.MouseEvent) => {
     e.preventDefault();
     alert("You can't go to a page you're already on silly! :P");
@@ -21,7 +38,14 @@ export default function Projects() {
         <p className="projects-section-subtitle">A selection of my works and creations.</p>
       </div>
 
-      <div className="projects-grid">
+      <div
+        ref={gridRef}
+        className={`projects-grid ${showAll ? 'expanded' : 'collapsed'}`}
+        style={{
+          maxHeight: showAll ? `${height}px` : 'calc((300px + 2rem) * 3)',
+          transition: 'max-height 0.8s ease-in-out',
+        }}
+      >
         <a href="#" onClick={handleAlreadyHere} className="project-card-link-overlay" aria-label="This Website">
           <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 0, 150, 0.2)">
             <div className="project-card-content">
@@ -114,7 +138,11 @@ export default function Projects() {
             </div>
           </SpotlightCard>
         </a>
-      </div>
+        </div>
+
+      <button className="show-more-btn" onClick={toggleShowAll}>
+        {showAll ? 'Show Less' : 'Show More'}
+      </button>
     </section>
   );
 }

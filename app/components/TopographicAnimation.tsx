@@ -10,7 +10,7 @@ export default function Topography() {
     if (!containerRef.current) return;
 
     const width = window.innerWidth;
-    const height = 400;
+    const height = 200;
     const fg = 0xffffff;
 
     const scene = new THREE.Scene();
@@ -154,7 +154,7 @@ export default function Topography() {
   }, []);
 
   return (
-    <div style={{ margin: '3ch 0', height: '400px', opacity: 0.4, position: 'relative' }}>
+    <div style={{ margin: '1ch 0', height: '200px', opacity: 0.4, position: 'relative' }}>
       <div ref={containerRef} style={{ position: 'absolute', left: 0, right: 0 }} />
     </div>
   );
