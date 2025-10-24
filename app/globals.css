@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap');
+@import "tailwindcss";
+
 @font-face {
   font-family: 'FOT-Yuruka Std';
   src: url('../public/FOT-Yuruka Std.ttf') format('truetype');
@@ -5,8 +8,6 @@
   font-style: normal;
   font-display: swap;
 }
-
-@import "tailwindcss";
 
 :root {
   --background: #ffffff;
@@ -33,14 +34,20 @@ html {
   color: var(--foreground);
   height: 100%; /* ✅ fixes phantom bottom space */
   box-sizing: border-box;
+  font-family: 'Baloo Bhaijaan 2', sans-serif !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
   overscroll-behavior: none;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ✅ HERO SECTION (Restored desktop layout + fixed mobile behavior) */
@@ -54,6 +61,19 @@ body {
   justify-content: center;
   overflow: hidden;
   top: -80px; /* Adjust for extra height */
+}
+
+.about-me-header {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-me-pronouns-text {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--foreground);
+  font-weight: 500;
 }
 
 .home-hero::after {
@@ -349,4 +369,32 @@ body {
     max-height: none !important;
     overflow: visible !important;
   }
+}
+
+.topography-animation {
+  will-change: transform;
+  transform: translateZ(0); /* creates its own stable layer */
+  position: relative;
+  backface-visibility: hidden;
+  contain: paint;
+}
+
+.topography-animation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, transparent, var(--background));
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hover-on-hover {
+  transition: transform 0.3s ease;
+}
+
+.hover-on-hover:hover {
+  transform: scale(1.1);
 }

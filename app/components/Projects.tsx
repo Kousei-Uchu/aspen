@@ -8,13 +8,22 @@ export default function Projects() {
 
   const [showAll, setShowAll] = useState(false);
   const [height, setHeight] = useState<number | null>(null);
+  const [canToggle, setCanToggle] = useState(true);
   const gridRef = useRef<HTMLDivElement>(null);
 
   // Measure full height of grid for smooth transition
   useEffect(() => {
     if (gridRef.current) {
       const fullHeight = gridRef.current.scrollHeight;
+      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      const collapsedHeight = (300 + 2 * rem) * 3;
       setHeight(fullHeight);
+      if (fullHeight <= collapsedHeight) {
+        setShowAll(true);
+        setCanToggle(false);
+      } else {
+        setCanToggle(true);
+      }
     }
   }, [showAll]);
 
@@ -140,9 +149,11 @@ export default function Projects() {
         </a>
         </div>
 
-      <button className="show-more-btn" onClick={toggleShowAll}>
-        {showAll ? 'Show Less' : 'Show More'}
-      </button>
+      {canToggle && (
+        <button className="show-more-btn" onClick={toggleShowAll}>
+          {showAll ? 'Show Less' : 'Show More'}
+        </button>
+      )}
     </section>
   );
 }

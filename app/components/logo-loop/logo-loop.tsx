@@ -182,7 +182,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     fadeOut = false,
     fadeOutColor,
     scaleOnHover = false,
-    ariaLabel = 'Partner logos',
+    ariaLabel = 'Find me here',
     className,
     style
   }) => {

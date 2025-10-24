@@ -17,7 +17,10 @@ export default function AboutMe() {
     <>
     <section className="about-me-section">
         <div className="about-me-text-container">
+            <div className="about-me-header">
             <h2 className="about-me-heading">About Me</h2>
+            <h3 className="about-me-pronouns-text">They/Them</h3>
+            </div>
             <p className="about-me-text">
                 Hello! I'm Sorren, a {age}-year-old enthusiast from Australia with a passion for technology, programming, and photography, among many other things. I have a focus on diversity, but I love to make anything and everything. When I'm not coding or taking photos, I'm usually messing around online. Welcome to my personal website, where I display all of my works!
             </p>

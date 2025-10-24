@@ -28,7 +28,7 @@ export default function Contact() {
           pauseOnHover
           scaleOnHover
           fadeOut
-          fadeOutColor='#121212'
+          fadeOutColor='#0a0a0a'
           ariaLabel="Technology partners"
         />
       </div>

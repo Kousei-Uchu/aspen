@@ -154,7 +154,7 @@ export default function Topography() {
   }, []);
 
   return (
-    <div style={{ margin: '1ch 0', height: '200px', opacity: 0.4, position: 'relative' }}>
+    <div className="topography-animation" style={{ margin: '1ch 0', height: '200px', opacity: 0.4, position: 'relative' }}>
       <div ref={containerRef} style={{ position: 'absolute', left: 0, right: 0 }} />
     </div>
   );
