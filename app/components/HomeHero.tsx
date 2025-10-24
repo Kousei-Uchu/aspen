@@ -8,16 +8,14 @@ export default function HomeHero() {
   return (
     <>
     <section className="home-hero">
-      <Canvas camera={{ position: [0, 0, 10], fov: 45 }} gl={{ alpha: true }} style={{ width: '100%', height: '100%' }}>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} />
-
-        {/* Particle Field */}
-        <ParticleField count={2500} />
-
-        {/* Glass Cube */}
-        <GlassCube scale={3} />
-      </Canvas>
+    <Canvas camera={{ position: [0, 0, 10], fov: 45 }} gl={{ alpha: true }}>
+  <ambientLight intensity={0.4} />
+  <pointLight position={[10, 10, 10]} intensity={1.2} />
+  <directionalLight position={[-5, 5, -5]} intensity={1.5} color="#ffffff" /> {/* rim light */}
+  
+  <ParticleField count={2500} />
+  <GlassCube scale={3} />
+</Canvas>
 
       {/* Hero Text */}
       <div className="hero-text-container">
@@ -69,10 +67,11 @@ function GlassCube({ scale }: { scale: number }) {
       <boxGeometry args={[scale, scale, scale]} />
       <MeshTransmissionMaterial
         ior={1.15}
-        thickness={5}
+        thickness={10}
         chromaticAberration={0.1}
-        anisotropy={0.01}
+        anisotropy={0.2}
         color="#ffffff"
+        iridescence={2}
       />
     </mesh>
   );

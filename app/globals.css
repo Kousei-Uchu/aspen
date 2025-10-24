@@ -398,3 +398,15 @@ body {
 .hover-on-hover:hover {
   transform: scale(1.1);
 }
+
+.about-me-pronouns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-me-pronouns-flag {
+  height: 30px;
+  width: 45px;
+}
