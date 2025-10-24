@@ -1,5 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 export default function AboutMe() {
-    let age = getAge();
+    const age = getAge();
 
     function getAge() {
         const birthDate = new Date('2010-11-10');

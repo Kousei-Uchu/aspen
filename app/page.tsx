@@ -3,6 +3,7 @@ import HomeHero from "./components/HomeHero";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Statement from "./components/Statement";
+import Topography from "./components/TopographicAnimation";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
     <Projects />
     <Statement />
     <Contact />
+    <Topography />
     </>
   );
 }

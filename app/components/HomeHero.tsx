@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { MeshTransmissionMaterial, Points, PointMaterial } from '@react-three/drei';

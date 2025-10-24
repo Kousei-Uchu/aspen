@@ -25,13 +25,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ClickSpark sparkColor="rgba(255, 255, 255, 0.3)" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+      
+      <ClickSpark sparkColor="rgba(255, 255, 255, 0.3)" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
         {children}
+
+</ClickSpark>
       </body>
-      </ClickSpark>
     </html>
   );
 }
