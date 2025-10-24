@@ -117,7 +117,7 @@ export default function Projects() {
             </div>
           </SpotlightCard>
         </a>
-        <a href="#" onClick={handleMaintaining} className="project-card-link-overlay" aria-label="Calendair">
+        <a href="https://github.com/Kousei-Uchu/The-Den-Bot-Public" className="project-card-link-overlay" aria-label="Botkisser">
           <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 221, 0, 0.2)">
             <div className="project-card-content">
               <h3 className="project-card-title">Botkisser</h3>
@@ -127,7 +127,7 @@ export default function Projects() {
             </div>
           </SpotlightCard>
         </a>
-        <a href="#" onClick={handleMaintaining} className="project-card-link-overlay" aria-label="Calendair">
+        <a href="#" onClick={handleMaintaining} className="project-card-link-overlay" aria-label="SoberTrack">
           <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 0, 153, 0.2)">
             <div className="project-card-content">
               <h3 className="project-card-title">SoberTrack</h3>
@@ -137,12 +137,22 @@ export default function Projects() {
             </div>
           </SpotlightCard>
         </a>
-        <a href="#" onClick={handleMaintaining} className="project-card-link-overlay" aria-label="Calendair">
+        <a href="#" onClick={handleMaintaining} className="project-card-link-overlay" aria-label="Sequoia Social">
           <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(242, 255, 0, 0.2)">
             <div className="project-card-content">
               <h3 className="project-card-title">Sequoia Social</h3>
               <p className="project-card-description">
                 An all in one Matrix based social platform designed for a more pleasant experience for neurodivergent and marginalised individuals, as well as the average Joe alike, with bridges to many other messaging apps. Currently on the backburner.
+              </p>
+            </div>
+          </SpotlightCard>
+        </a>
+        <a href="https://github.com/Kousei-Uchu/pride-pkg" className="project-card-link-overlay" aria-label="Pride Package">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 0, 242, 0.2)">
+            <div className="project-card-content">
+              <h3 className="project-card-title">Pride Package</h3>
+              <p className="project-card-description">
+                A fairly simple package for React with customisable Pride Flag assets, and more to come! Still developing!
               </p>
             </div>
           </SpotlightCard>
