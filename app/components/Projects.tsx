@@ -53,7 +53,7 @@ addEventListener('resize', handleCollapsing)
   return (
     <section className="projects-section">
       <div className="projects-section-header">
-        <h2 className="projects-section-title">Projects</h2>
+        <h2 className="projects-section-title">My Projects</h2>
         <p className="projects-section-subtitle">A selection of my works and creations.</p>
       </div>
 
