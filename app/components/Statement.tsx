@@ -9,7 +9,7 @@ export default function Statement() {
                 <br />
                 I'm all for diversity and I strive for an inclusive, supportive, and innovative world. I myself am Autistic and Queer, and I have always had a desire to help ohers, along with a facination with the human experience. Ever since I played Minecraft for the first time back when I was like 6 or 7, I've had a fancy for computers. I decided why not merge my interests and skills to better others and the world. I'm always looking for ways to make a difference.
                 <br />
-                If you'd like to learn more about me, my emails are always open for questions, suggestions, and really anything at all!
+                If you'd like to learn more about me or have any ideas, my emails are always open for questions, suggestions, and really anything at all!
             </p>
         </section>
     );

@@ -3,6 +3,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import SpotlightCard from './spotlight-card/spotlight-card';
+import { Resize } from '@react-three/drei';
 
 export default function Projects() {
 
@@ -13,17 +14,26 @@ export default function Projects() {
 
   // Measure full height of grid for smooth transition
   useEffect(() => {
-    if (gridRef.current) {
+    const handleCollapsing = () => {if (gridRef.current) {
       const fullHeight = gridRef.current.scrollHeight;
       const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-      const collapsedHeight = (300 + 2 * rem) * 3;
+      const collapsedHeight = (225 + 2 * rem) * 3;
       setHeight(fullHeight);
-      if (fullHeight <= (collapsedHeight + 20)) {
+      if (fullHeight <= (collapsedHeight) || window.innerWidth > 805) {
         setShowAll(true);
         setCanToggle(false);
       } else {
         setCanToggle(true);
       }
+    }
+}
+
+handleCollapsing()
+
+addEventListener('resize', handleCollapsing)
+
+    return () => {
+        window.removeEventListener('resize', handleCollapsing)
     }
   }, [showAll]);
 

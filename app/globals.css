@@ -12,6 +12,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --card-background: #eee;
+  --card-border: #ddd;
 }
 
 @theme inline {
@@ -25,6 +27,8 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --card-background: #111;
+    --card-border: #222;
   }
 }
 
@@ -104,11 +108,11 @@ body {
 }
 
 .hero-text {
-  color: white;
+  color: var(--foreground);
   font-size: clamp(1.5rem, 3vw, 3rem);
   text-align: center;
   font-weight: 700;
-  text-shadow: 0 0 20px rgba(0,0,0,0.5);
+  text-shadow: 0 0 20px var(--background);
   font-family: 'FOT-Yuruka STD', sans-serif;
 }
 
@@ -167,7 +171,7 @@ body {
 }
 
 /* ✅ MOBILE VIEW (still stacked nicely) */
-@media (max-width: 768px) {
+@media (max-width: 805px) {
   .about-me-section {
     flex-direction: column-reverse;
     text-align: center;
@@ -410,4 +414,8 @@ body {
 .about-me-pronouns-flag {
   height: 30px;
   width: 45px;
+}
+
+.custom-spotlight-card {
+  background-color: var(--card-color);
 }

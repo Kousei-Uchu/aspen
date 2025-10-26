@@ -1,8 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client';
 
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons'; // <-- import the icon
+import { faGithub, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import LogoLoop from './logo-loop/logo-loop';
 
@@ -14,10 +15,28 @@ const logos = [
 ];
 
 export default function Contact() {
+  const [fadeColor, setFadeColor] = useState('#ffffff');
+
+  useEffect(() => {
+    // Detect system theme
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const updateColor = () => {
+      setFadeColor(media.matches ? '#0a0a0a' : '#ffffff');
+    };
+
+    updateColor(); // Initial color set
+    media.addEventListener('change', updateColor);
+
+    return () => media.removeEventListener('change', updateColor);
+  }, []);
+
   return (
     <section className="contact-section">
       <h1 className="contact-title">Contact Me</h1>
-      <p className="contact-text">If you'd like to get in touch, feel free to reach out via email or social media!</p>
+      <p className="contact-text">
+        If you'd like to get in touch, feel free to reach out via email or social media!
+      </p>
       <div style={{ position: 'relative', overflow: 'hidden' }}>
         <LogoLoop
           logos={logos}
@@ -28,7 +47,7 @@ export default function Contact() {
           pauseOnHover
           scaleOnHover
           fadeOut
-          fadeOutColor='#0a0a0a'
+          fadeOutColor={fadeColor}
           ariaLabel="Technology partners"
         />
       </div>
