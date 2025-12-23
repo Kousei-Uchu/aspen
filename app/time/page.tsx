@@ -10,8 +10,7 @@ const SydneyTime: React.FC = () => {
     const updateTime = () => {
       const now = new Date();
       const sydneyTime = now.toLocaleTimeString('en-AU', {
-        timeZone: 'Australia/Sydney',
-        hour12: false,
+        timeZone: 'Australia/Sydney'
       });
       const sydneyDate = now.toLocaleDateString('en-AU', {
         timeZone: 'Australia/Sydney',
