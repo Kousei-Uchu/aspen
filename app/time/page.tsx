@@ -47,7 +47,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    background: 'linear-gradient(to right, #6a11cb, #2575fc)',
+    background: 'linear-gradient(to right, #F6F6F6, #98EDA9)',
     fontFamily: 'Segoe UI, Roboto, sans-serif',
   },
   card: {
