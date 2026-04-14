@@ -87,6 +87,17 @@ addEventListener('resize', handleCollapsing)
           </SpotlightCard>
         </a>
 
+        <a href="https://characters.sorren.me" className="project-card-link-overlay" aria-label="Silvershots" target="_blank" rel="noopener noreferrer">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(141, 10, 10, 0.2)">
+            <div className="project-card-content">
+              <h3 className="project-card-title">Character Library</h3>
+              <p className="project-card-description">
+                One of my websites to showcase all of the various characters I've created, with dynamic page generation, and some other fun bits and pieces.
+              </p>
+            </div>
+          </SpotlightCard>
+        </a>
+
         <a href="#" onClick={handleMaintaining} className="project-card-link-overlay" aria-label="Calendair">
           <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 255, 150, 0.2)">
             <div className="project-card-content">
@@ -127,7 +138,7 @@ addEventListener('resize', handleCollapsing)
             </div>
           </SpotlightCard>
         </a>
-        <a href="https://github.com/Kousei-Uchu/The-Den-Bot-Public" className="project-card-link-overlay" aria-label="Botkisser">
+        <a href="https://github.com/Kousei-Uchu/BotKisser" className="project-card-link-overlay" aria-label="Botkisser">
           <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 221, 0, 0.2)">
             <div className="project-card-content">
               <h3 className="project-card-title">Botkisser</h3>
@@ -142,7 +153,7 @@ addEventListener('resize', handleCollapsing)
             <div className="project-card-content">
               <h3 className="project-card-title">SoberTrack</h3>
               <p className="project-card-description">
-                A comprehensive sobriety tracking app designed to help users monitor their journey towards recovery. Features include milestone tracking, motivational quotes, and many other features. Currently under development.
+                [ABANDONED] A comprehensive sobriety tracking app designed to help users monitor their journey towards recovery. Features include milestone tracking, motivational quotes, and many other features. Currently under development.
               </p>
             </div>
           </SpotlightCard>
@@ -152,7 +163,7 @@ addEventListener('resize', handleCollapsing)
             <div className="project-card-content">
               <h3 className="project-card-title">Sequoia Social</h3>
               <p className="project-card-description">
-                An all in one Matrix based social platform designed for a more pleasant experience for neurodivergent and marginalised individuals, as well as the average Joe alike, with bridges to many other messaging apps. Currently on the backburner.
+                [ABANDONED] An all in one Matrix based social platform designed for a more pleasant experience for neurodivergent and marginalised individuals, as well as the average Joe alike, with bridges to many other messaging apps. Currently on the backburner.
               </p>
             </div>
           </SpotlightCard>
