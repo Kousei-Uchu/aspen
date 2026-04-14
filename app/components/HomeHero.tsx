@@ -81,7 +81,7 @@ function InstancedParticles({ count, isDark }: { count: number; isDark: boolean 
   return (
     <group ref={groupRef}>
       <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
-        <sphereGeometry args={[0.023, 4, 4]} />
+        <sphereGeometry args={[0.023, 32, 16]} />
         <meshBasicMaterial color={isDark ? '#ffffff' : '#000000'} />
       </instancedMesh>
     </group>
