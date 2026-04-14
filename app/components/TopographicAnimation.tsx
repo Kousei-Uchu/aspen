@@ -3,36 +3,41 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-export default function Topography() {
+interface TopographyProps {
+  height?: number; // optional, defaults to 200
+  fs?: boolean;
+}
+
+export default function Topography({ height = 200, fs=false }: TopographyProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Initial theme detection
+    // Detect theme
     const media = window.matchMedia('(prefers-color-scheme: dark)');
     let isDark = media.matches;
     const fg = () => (isDark ? 0xffffff : 0x000000);
 
     const width = window.innerWidth;
-    const height = 200;
+    const h = height;
 
     // Scene setup
     const scene = new THREE.Scene();
-    const camera = new THREE.OrthographicCamera(0, width, 0, height, 1, 2);
+    const camera = new THREE.OrthographicCamera(0, width, 0, h, 1, 2);
     camera.position.z = 2;
 
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setClearColor(0, 0);
-    renderer.setSize(width, height);
+    renderer.setSize(width, h);
     renderer.setPixelRatio(window.devicePixelRatio);
     containerRef.current.appendChild(renderer.domElement);
 
     const clock = new THREE.Clock();
 
     // Geometry
-    const geometry = new THREE.PlaneGeometry(width, height);
-    geometry.translate(width / 2, height / 2, 0);
+    const geometry = new THREE.PlaneGeometry(width, h);
+    geometry.translate(width / 2, h / 2, 0);
 
     // Shaders
     const vs = `
@@ -123,7 +128,7 @@ export default function Topography() {
     // Handle resize
     const handleResize = () => {
       const newWidth = window.innerWidth;
-      renderer.setSize(newWidth, height);
+      renderer.setSize(newWidth, h);
       camera.right = newWidth;
       camera.updateProjectionMatrix();
     };
@@ -145,24 +150,25 @@ export default function Topography() {
     animate();
 
     // Cleanup
+    const container = containerRef.current; // fix ESLint warning
     return () => {
       window.removeEventListener('resize', handleResize);
       media.removeEventListener('change', handleThemeChange);
       renderer.dispose();
       geometry.dispose();
       material.dispose();
-      if (containerRef.current?.contains(renderer.domElement)) {
-        containerRef.current.removeChild(renderer.domElement);
+      if (container?.contains(renderer.domElement)) {
+        container.removeChild(renderer.domElement);
       }
     };
-  }, []);
+  }, [height]);
 
   return (
     <div
-      className="topography-animation"
+    className={`topography-animation${fs ? ' fullscreen' : ''}`}
       style={{
         margin: '1ch 0',
-        height: '200px',
+        height: `${height}px`,
         opacity: 0.4,
         position: 'relative',
       }}
