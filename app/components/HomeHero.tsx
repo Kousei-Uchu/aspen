@@ -1,4 +1,3 @@
-// Replace the entire file with this:
 /* eslint-disable react/no-unescaped-entities */
 'use client';
 import { Canvas, useFrame } from '@react-three/fiber';
@@ -38,10 +37,8 @@ export default function HomeHero() {
           </>
         )}
 
-        {/* Instanced particles — one draw call instead of 2,500 */}
         <InstancedParticles count={1200} isDark={isDark} />
 
-        {/* Glass cube — fewer samples, same look */}
         <GlassCube scale={3} />
       </Canvas>
 
@@ -84,7 +81,6 @@ function InstancedParticles({ count, isDark }: { count: number; isDark: boolean 
   return (
     <group ref={groupRef}>
       <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
-        {/* 4-segment sphere — visually identical at this size, ~600× cheaper */}
         <sphereGeometry args={[0.023, 4, 4]} />
         <meshBasicMaterial color={isDark ? '#ffffff' : '#000000'} />
       </instancedMesh>
@@ -110,7 +106,7 @@ function GlassCube({ scale }: { scale: number }) {
         anisotropy={0.2}
         color="#ffffff"
         iridescence={1.5}
-        samples={4}  {/* was 20 — this alone saves ~80% of GPU time */}
+        samples={4}
       />
     </mesh>
   );
