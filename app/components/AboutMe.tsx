@@ -30,12 +30,12 @@ export default function AboutMe() {
             </div>
             </div>
             <p className="about-me-text">
-                Hello! I'm Sorren, a {age}-year-old enthusiast from Australia with a passion for technology, programming, and photography, among many other things. I have a focus on diversity, but I love to make anything and everything. When I'm not coding or taking photos, I'm usually messing around online. Welcome to my personal website, where I display all of my works!
+                Hello! I'm Aspen, a {age}-year-old enthusiast from Australia with a passion for technology, programming, and photography, among many other things. I have a focus on diversity, but I love to make anything and everything. When I'm not coding or taking photos, I'm usually messing around online. Welcome to my personal website, where I display all of my works!
             </p>
         </div>
         <img
-            src="/Sorren.png"
-            alt="Sorren's Profile Picture"
+            src="/Aspen.png"
+            alt="Aspen's Profile Picture"
             width={300}
             height={300}
             className="about-me-profile-pic"

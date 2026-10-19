@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sorren",
-  description: "Sorren's Personal Website",
+  title: "Aspen",
+  description: "Aspen's Personal Website",
 };
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
       
-      <ClickSpark sparkColor="rgba(255, 255, 255, 0.3)" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
+      <ClickSpark sparkColor="rgba(197, 138, 74, 0.7)" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
         {children}
 
 </ClickSpark>

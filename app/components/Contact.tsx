@@ -15,14 +15,14 @@ const logos = [
 ];
 
 export default function Contact() {
-  const [fadeColor, setFadeColor] = useState('#ffffff');
+  const [fadeColor, setFadeColor] = useState('#F6ECD3');
 
   useEffect(() => {
     // Detect system theme
     const media = window.matchMedia('(prefers-color-scheme: dark)');
 
     const updateColor = () => {
-      setFadeColor(media.matches ? '#0a0a0a' : '#ffffff');
+      setFadeColor(media.matches ? '#29402E' : '#F6ECD3');
     };
 
     updateColor(); // Initial color set

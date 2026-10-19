@@ -66,7 +66,7 @@ addEventListener('resize', handleCollapsing)
         }}
       >
         <a href="#" onClick={handleAlreadyHere} className="project-card-link-overlay" aria-label="This Website">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 0, 150, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(232, 201, 138, 0.3)">
             <div className="project-card-content">
               <h3 className="project-card-title">This Website</h3>
               <p className="project-card-description">
@@ -77,7 +77,7 @@ addEventListener('resize', handleCollapsing)
         </a>
 
         <a href="https://silvershots.sorren.me" className="project-card-link-overlay" aria-label="Silvershots" target="_blank" rel="noopener noreferrer">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 200, 255, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(197, 138, 74, 0.3)">
             <div className="project-card-content">
               <h3 className="project-card-title">Silvershots</h3>
               <p className="project-card-description">
@@ -88,7 +88,7 @@ addEventListener('resize', handleCollapsing)
         </a>
 
         <a href="https://characters.sorren.me" className="project-card-link-overlay" aria-label="Silvershots" target="_blank" rel="noopener noreferrer">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(141, 10, 10, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(152, 91, 58, 0.3)">
             <div className="project-card-content">
               <h3 className="project-card-title">Character Library</h3>
               <p className="project-card-description">
@@ -99,7 +99,7 @@ addEventListener('resize', handleCollapsing)
         </a>
 
         <a href="#" onClick={handleMaintaining} className="project-card-link-overlay" aria-label="Calendair">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 255, 150, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(232, 201, 138, 0.3)">
             <div className="project-card-content">
               <h3 className="project-card-title">Calendair</h3>
               <p className="project-card-description">
@@ -109,7 +109,7 @@ addEventListener('resize', handleCollapsing)
           </SpotlightCard>
         </a>
         <a href="https://sequoiasupport.com" className="project-card-link-overlay" aria-label="Calendair">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 0, 0, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(197, 138, 74, 0.3)">
             <div className="project-card-content">
               <h3 className="project-card-title">Sequoia Support</h3>
               <p className="project-card-description">
@@ -119,7 +119,7 @@ addEventListener('resize', handleCollapsing)
           </SpotlightCard>
           </a>
           <a href="https://helpingpaw.sequoiasupport.com" className="project-card-link-overlay" aria-label="Calendair">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 8, 255, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(152, 91, 58, 0.3)">
             <div className="project-card-content">
               <h3 className="project-card-title">Helping Paw</h3>
               <p className="project-card-description">
@@ -129,7 +129,7 @@ addEventListener('resize', handleCollapsing)
           </SpotlightCard>
         </a>
         <a href="https://profiles.sequoiasupport.com" className="project-card-link-overlay" aria-label="Calendair">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 221, 255, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(232, 201, 138, 0.3)">
             <div className="project-card-content">
               <h3 className="project-card-title">Sequoia Profiles</h3>
               <p className="project-card-description">
@@ -139,7 +139,7 @@ addEventListener('resize', handleCollapsing)
           </SpotlightCard>
         </a>
         <a href="https://github.com/Kousei-Uchu/BotKisser" className="project-card-link-overlay" aria-label="Botkisser">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 221, 0, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(197, 138, 74, 0.3)">
             <div className="project-card-content">
               <h3 className="project-card-title">Botkisser</h3>
               <p className="project-card-description">
@@ -149,7 +149,7 @@ addEventListener('resize', handleCollapsing)
           </SpotlightCard>
         </a>
         <a href="#" onClick={handleMaintaining} className="project-card-link-overlay" aria-label="SoberTrack">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 0, 153, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(152, 91, 58, 0.3)">
             <div className="project-card-content">
               <h3 className="project-card-title">SoberTrack</h3>
               <p className="project-card-description">
@@ -159,7 +159,7 @@ addEventListener('resize', handleCollapsing)
           </SpotlightCard>
         </a>
         <a href="#" onClick={handleMaintaining} className="project-card-link-overlay" aria-label="Sequoia Social">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(242, 255, 0, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(232, 201, 138, 0.3)">
             <div className="project-card-content">
               <h3 className="project-card-title">Sequoia Social</h3>
               <p className="project-card-description">
@@ -169,7 +169,7 @@ addEventListener('resize', handleCollapsing)
           </SpotlightCard>
         </a>
         <a href="https://github.com/Kousei-Uchu/pride-pkg" className="project-card-link-overlay" aria-label="Pride Package">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 0, 242, 0.2)">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(197, 138, 74, 0.3)">
             <div className="project-card-content">
               <h3 className="project-card-title">Pride Package</h3>
               <p className="project-card-description">

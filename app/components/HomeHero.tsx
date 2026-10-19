@@ -5,6 +5,9 @@ import { MeshTransmissionMaterial } from '@react-three/drei';
 import { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 
+const DARK_BG = '#29402E';
+const LIGHT_BG = '#F6ECD3';
+
 export default function HomeHero() {
   const [isDark, setIsDark] = useState(false);
 
@@ -23,27 +26,27 @@ export default function HomeHero() {
         shadows={false}
         camera={{ position: [0, 0, 10], fov: 45 }}
         gl={{ alpha: true, antialias: false, powerPreference: 'high-performance' }}
-        style={{ background: isDark ? '#0a0a0a' : '#ffffff' }}
+        style={{ background: isDark ? DARK_BG : LIGHT_BG }}
         onCreated={({ gl }) => {
-          gl.setClearColor(isDark ? 0x0a0a0a : 0xffffff, 1);
+          gl.setClearColor(isDark ? 0x29402e : 0xf6ecd3, 1);
           gl.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
         }}
       >
         <ambientLight intensity={0.4} />
         {!isDark && (
           <>
-            <pointLight position={[10, 10, 10]} intensity={1.2} />
-            <directionalLight position={[-5, 5, -5]} intensity={1.5} color="#ffffff" />
+            <pointLight position={[10, 10, 10]} intensity={1.2} color="#E8C98A" />
+            <directionalLight position={[-5, 5, -5]} intensity={1.5} color="#C58A4A" />
           </>
         )}
 
         <InstancedParticles count={1200} isDark={isDark} />
 
-        <GlassCube scale={3} />
+        <GlassCube scale={3} isDark={isDark} />
       </Canvas>
 
       <div className="hero-text-container">
-        <h1 className="hero-text">Heya! I'm Sorren!</h1>
+        <h1 className="hero-text">Heya! I'm Aspen!</h1>
         <p className="hero-text" style={{ fontSize: '2vh' }}>
           Shenanigans Extraordinaire
         </p>
@@ -82,13 +85,13 @@ function InstancedParticles({ count, isDark }: { count: number; isDark: boolean 
     <group ref={groupRef}>
       <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
         <sphereGeometry args={[0.023, 32, 16]} />
-        <meshBasicMaterial color={isDark ? '#ffffff' : '#000000'} />
+        <meshBasicMaterial color={isDark ? '#E8C98A' : '#985B3A'} />
       </instancedMesh>
     </group>
   );
 }
 
-function GlassCube({ scale }: { scale: number }) {
+function GlassCube({ scale, isDark }: { scale: number; isDark: boolean }) {
   const ref = useRef<THREE.Mesh>(null);
   useFrame((_, delta) => {
     if (ref.current) {
@@ -104,8 +107,8 @@ function GlassCube({ scale }: { scale: number }) {
         thickness={10}
         chromaticAberration={0.05}
         anisotropy={0.2}
-        color="#ffffff"
-        iridescence={1.5}
+        color={isDark ? '#E8C98A' : '#C58A4A'}
+        iridescence={0}
         samples={4}
       />
     </mesh>

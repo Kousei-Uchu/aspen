@@ -17,7 +17,7 @@ export default function Topography({ height = 200, fs=false }: TopographyProps) 
     // Detect theme
     const media = window.matchMedia('(prefers-color-scheme: dark)');
     let isDark = media.matches;
-    const fg = () => (isDark ? 0xffffff : 0x000000);
+    const fg = () => (isDark ? 0xe8c98a : 0x985b3a);
 
     const width = window.innerWidth;
     const h = height;

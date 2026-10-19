@@ -32,7 +32,7 @@ const SydneyTime: React.FC = () => {
   return (
     <div style={styles.container}>
       <div style={styles.card}>
-        <h1 style={styles.title}>Current Time for Sorren</h1>
+        <h1 style={styles.title}>Current Time for Aspen</h1>
         <p style={styles.date}>{date}</p>
         <p style={styles.time}>{time}</p>
       </div>
@@ -46,31 +46,31 @@ const styles: { [key: string]: React.CSSProperties } = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    background: 'linear-gradient(to right, #F6F6F6, #98EDA9)',
+    background: 'linear-gradient(135deg, #29402E 0%, #3F5743 55%, #985B3A 85%, #C58A4A 100%)',
     fontFamily: 'Segoe UI, Roboto, sans-serif',
   },
   card: {
-    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    backgroundColor: 'rgba(232, 201, 138, 0.92)',
     borderRadius: '16px',
     padding: '40px 60px',
     textAlign: 'center',
-    boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
+    boxShadow: '0 8px 24px rgba(41,64,46,0.45)',
   },
   title: {
     margin: 0,
     fontSize: '2rem',
-    color: '#333',
+    color: '#5A3A29',
   },
   date: {
     margin: '10px 0',
     fontSize: '1.2rem',
-    color: '#555',
+    color: '#985B3A',
   },
   time: {
     margin: '10px 0',
     fontSize: '3rem',
     fontWeight: 'bold',
-    color: '#222',
+    color: '#5A3A29',
   },
 };
 
