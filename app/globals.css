@@ -9,16 +9,48 @@
   font-display: swap;
 }
 
+/* Aspen: forest at dawn + walnut. Sections alternate via .band-* classes. */
 :root {
-  /* Golden hour: pale dawn light, walnut ink */
-  --background: #F6ECD3;
-  --foreground: #5A3A29;
-  --card-background: #EDD9AE;
-  --card-border: #E8C98A;
-  --accent: #985B3A;
+  color-scheme: dark;
+  --background: #29402E;
+  --foreground: #E8C98A;
+  --card-background: #5A3A29;
+  --card-border: #985B3A;
+  --accent: #E8C98A;
   --accent-soft: #C58A4A;
-  --hero-glow: radial-gradient(ellipse 70% 55% at 50% 78%, rgba(232, 201, 138, 0.75), rgba(197, 138, 74, 0.25) 55%, transparent 80%);
-  --hero-glow-blend: multiply;
+}
+
+/* Full-width colour bands (each re-declares the vars its children use) */
+.band {
+  position: relative;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.band + .band {
+  border-top: 1px solid rgba(197, 138, 74, 0.45);
+}
+
+.band-forest {
+  --background: #29402E;
+  --card-background: #5A3A29;
+  --card-border: #985B3A;
+}
+
+.band-moss {
+  --background: #3F5743;
+  --card-background: #29402E;
+  --card-border: #5A3A29;
+}
+
+/* Walnut: faint vertical grain */
+.band-walnut {
+  --background: #5A3A29;
+  --card-background: #29402E;
+  --card-border: #3F5743;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0 2px, transparent 2px 11px),
+    repeating-linear-gradient(90deg, rgba(232, 201, 138, 0.03) 0 1px, transparent 1px 29px);
 }
 
 @theme inline {
@@ -28,19 +60,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Forest at dawn: deep green canopy, golden light */
-    --background: #29402E;
-    --foreground: #E8C98A;
-    --card-background: #3F5743;
-    --card-border: #5A3A29;
-    --accent: #E8C98A;
-    --accent-soft: #C58A4A;
-    --hero-glow: radial-gradient(ellipse 70% 55% at 50% 78%, rgba(232, 201, 138, 0.35), rgba(197, 138, 74, 0.18) 55%, transparent 80%);
-    --hero-glow-blend: screen;
-  }
-}
 
 html {
   scroll-behavior: smooth;
@@ -97,8 +116,9 @@ body {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: var(--hero-glow);
-  mix-blend-mode: var(--hero-glow-blend);
+  background:
+    linear-gradient(to top, rgba(90, 58, 41, 0.9) 0%, rgba(90, 58, 41, 0) 42%),
+    radial-gradient(ellipse 70% 55% at 50% 72%, rgba(232, 201, 138, 0.38), rgba(197, 138, 74, 0.18) 55%, transparent 80%);
 }
 
 .home-hero::after {
@@ -132,7 +152,7 @@ body {
   font-size: clamp(1.5rem, 3vw, 3rem);
   text-align: center;
   font-weight: 700;
-  text-shadow: 0 0 20px var(--background);
+  text-shadow: 0 0 20px #29402E;
   font-family: 'FOT-Yuruka STD', sans-serif;
 }
 

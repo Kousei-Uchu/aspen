@@ -14,10 +14,7 @@ export default function Topography({ height = 200, fs=false }: TopographyProps) 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Detect theme
-    const media = window.matchMedia('(prefers-color-scheme: dark)');
-    let isDark = media.matches;
-    const fg = () => (isDark ? 0xe8c98a : 0x985b3a);
+    const fg = () => 0xe8c98a;
 
     const width = window.innerWidth;
     const h = height;
@@ -134,13 +131,6 @@ export default function Topography({ height = 200, fs=false }: TopographyProps) 
     };
     window.addEventListener('resize', handleResize);
 
-    // Handle color scheme changes
-    const handleThemeChange = (e: MediaQueryListEvent) => {
-      isDark = e.matches;
-      material.uniforms.color.value.set(fg());
-    };
-    media.addEventListener('change', handleThemeChange);
-
     // Animation loop
     const animate = () => {
       material.uniforms.time.value = clock.getElapsedTime();
@@ -153,7 +143,6 @@ export default function Topography({ height = 200, fs=false }: TopographyProps) 
     const container = containerRef.current; // fix ESLint warning
     return () => {
       window.removeEventListener('resize', handleResize);
-      media.removeEventListener('change', handleThemeChange);
       renderer.dispose();
       geometry.dispose();
       material.dispose();

@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client';
 
-import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -15,22 +14,6 @@ const logos = [
 ];
 
 export default function Contact() {
-  const [fadeColor, setFadeColor] = useState('#F6ECD3');
-
-  useEffect(() => {
-    // Detect system theme
-    const media = window.matchMedia('(prefers-color-scheme: dark)');
-
-    const updateColor = () => {
-      setFadeColor(media.matches ? '#29402E' : '#F6ECD3');
-    };
-
-    updateColor(); // Initial color set
-    media.addEventListener('change', updateColor);
-
-    return () => media.removeEventListener('change', updateColor);
-  }, []);
-
   return (
     <section className="contact-section">
       <h1 className="contact-title">Contact Me</h1>
@@ -47,7 +30,6 @@ export default function Contact() {
           pauseOnHover
           scaleOnHover
           fadeOut
-          fadeOutColor={fadeColor}
           ariaLabel="Technology partners"
         />
       </div>

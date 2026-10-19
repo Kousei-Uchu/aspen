@@ -2,47 +2,32 @@
 'use client';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { MeshTransmissionMaterial } from '@react-three/drei';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 
-const DARK_BG = '#29402E';
-const LIGHT_BG = '#F6ECD3';
+const SKY = '#29402E';
+const MOTES = ['#E8C98A', '#C58A4A', '#985B3A'];
 
 export default function HomeHero() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDark(media.matches);
-    const listener = (e: MediaQueryListEvent) => setIsDark(e.matches);
-    media.addEventListener('change', listener);
-    return () => media.removeEventListener('change', listener);
-  }, []);
-
   return (
     <section className="home-hero">
       <Canvas
-        key={isDark ? 'dark' : 'light'}
         shadows={false}
         camera={{ position: [0, 0, 10], fov: 45 }}
         gl={{ alpha: true, antialias: false, powerPreference: 'high-performance' }}
-        style={{ background: isDark ? DARK_BG : LIGHT_BG }}
+        style={{ background: SKY }}
         onCreated={({ gl }) => {
-          gl.setClearColor(isDark ? 0x29402e : 0xf6ecd3, 1);
+          gl.setClearColor(0x29402e, 1);
           gl.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
         }}
       >
-        <ambientLight intensity={0.4} />
-        {!isDark && (
-          <>
-            <pointLight position={[10, 10, 10]} intensity={1.2} color="#E8C98A" />
-            <directionalLight position={[-5, 5, -5]} intensity={1.5} color="#C58A4A" />
-          </>
-        )}
+        <ambientLight intensity={0.5} />
+        <pointLight position={[10, 10, 10]} intensity={1.2} color="#E8C98A" />
+        <directionalLight position={[-5, 5, -5]} intensity={1.5} color="#C58A4A" />
 
-        <InstancedParticles count={1200} isDark={isDark} />
+        <InstancedParticles count={1200} />
 
-        <GlassCube scale={3} isDark={isDark} />
+        <GlassCube scale={3} />
       </Canvas>
 
       <div className="hero-text-container">
@@ -55,13 +40,14 @@ export default function HomeHero() {
   );
 }
 
-function InstancedParticles({ count, isDark }: { count: number; isDark: boolean }) {
+function InstancedParticles({ count }: { count: number }) {
   const meshRef = useRef<THREE.InstancedMesh>(null);
   const groupRef = useRef<THREE.Group>(null);
 
   useEffect(() => {
     if (!meshRef.current) return;
     const dummy = new THREE.Object3D();
+    const color = new THREE.Color();
     for (let i = 0; i < count; i++) {
       dummy.position.set(
         (Math.random() - 0.5) * 20,
@@ -70,8 +56,12 @@ function InstancedParticles({ count, isDark }: { count: number; isDark: boolean 
       );
       dummy.updateMatrix();
       meshRef.current.setMatrixAt(i, dummy.matrix);
+      // drifting golden dust and falling leaves: mostly gold/amber, some walnut
+      color.set(MOTES[Math.random() < 0.45 ? 0 : Math.random() < 0.6 ? 1 : 2]);
+      meshRef.current.setColorAt(i, color);
     }
     meshRef.current.instanceMatrix.needsUpdate = true;
+    if (meshRef.current.instanceColor) meshRef.current.instanceColor.needsUpdate = true;
   }, [count]);
 
   useFrame((_, delta) => {
@@ -85,13 +75,13 @@ function InstancedParticles({ count, isDark }: { count: number; isDark: boolean 
     <group ref={groupRef}>
       <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
         <sphereGeometry args={[0.023, 32, 16]} />
-        <meshBasicMaterial color={isDark ? '#E8C98A' : '#985B3A'} />
+        <meshBasicMaterial color="#ffffff" />
       </instancedMesh>
     </group>
   );
 }
 
-function GlassCube({ scale, isDark }: { scale: number; isDark: boolean }) {
+function GlassCube({ scale }: { scale: number }) {
   const ref = useRef<THREE.Mesh>(null);
   useFrame((_, delta) => {
     if (ref.current) {
@@ -107,7 +97,7 @@ function GlassCube({ scale, isDark }: { scale: number; isDark: boolean }) {
         thickness={10}
         chromaticAberration={0.05}
         anisotropy={0.2}
-        color={isDark ? '#E8C98A' : '#C58A4A'}
+        color="#C58A4A"
         iridescence={0}
         samples={4}
       />

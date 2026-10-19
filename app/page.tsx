@@ -8,12 +8,12 @@ import Topography from "./components/TopographicAnimation";
 export default function Home() {
   return (
     <>
-    <HomeHero />
-    <AboutMe />
-    <Projects />
-    <Statement />
-    <Contact />
-    <Topography />
+      <div className="band band-walnut"><HomeHero /></div>
+      <div className="band band-walnut"><AboutMe /></div>
+      <div className="band band-forest"><Projects /></div>
+      <div className="band band-walnut"><Statement /></div>
+      <div className="band band-moss"><Contact /></div>
+      <div className="band band-walnut"><Topography /></div>
     </>
   );
 }
