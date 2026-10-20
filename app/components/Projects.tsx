@@ -3,7 +3,6 @@
 
 import { useEffect, useState, useRef } from 'react';
 import SpotlightCard from './spotlight-card/spotlight-card';
-import { Resize } from '@react-three/drei';
 
 export default function Projects() {
 

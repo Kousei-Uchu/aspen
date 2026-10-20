@@ -14,6 +14,7 @@
     "@fortawesome/react-fontawesome": "^3.1.0",
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.4.0",
+    "geist": "^1.8.1",
     "maath": "^0.10.8",
     "next": "16.0.10",
     "ogl": "^1.0.11",

@@ -3,7 +3,7 @@ import HomeHero from "./components/HomeHero";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Statement from "./components/Statement";
-import Topography from "./components/TopographicAnimation";
+import Topography from "./components/TopographyLazy";
 import BandDivider from "./components/BandDivider";
 
 export default function Home() {
