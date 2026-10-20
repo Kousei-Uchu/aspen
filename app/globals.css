@@ -27,8 +27,19 @@
   color: var(--foreground);
 }
 
-.band + .band {
-  border-top: 1px solid rgba(197, 138, 74, 0.45);
+/* Organic ridge between two bands (see BandDivider.tsx) */
+.band-divider {
+  height: clamp(48px, 7vw, 100px);
+  overflow: hidden;
+  line-height: 0;
+}
+
+.band-divider__layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .band-forest {
