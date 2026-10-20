@@ -156,7 +156,6 @@ export default function Topography({ height = 200, fs=false }: TopographyProps) 
     <div
     className={`topography-animation${fs ? ' fullscreen' : ''}`}
       style={{
-        margin: '1ch 0',
         height: `${height}px`,
         opacity: 0.4,
         position: 'relative',

@@ -478,6 +478,5 @@ body {
 }
 
 .topography-animation.fullscreen {
-  margin: 0 !important;
   overflow: hidden;
 }
